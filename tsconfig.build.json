@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "declaration": true,
+    "noEmit": false
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/**/*.test.tsx",
+    "src/**/*.test.ts",
+    "src/setupTests.ts",
+    "src/index.tsx",
+    "src/App.tsx",
+    "src/reportWebVitals.ts"
+  ]
+}
