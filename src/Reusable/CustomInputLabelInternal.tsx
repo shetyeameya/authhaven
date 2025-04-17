@@ -3,7 +3,7 @@ import { Eye, EyeOff, Mail } from "lucide-react";
 import { InputTypes } from "../types/types";
 
 const CustomInputLabelInternal: React.FC<InputTypes> = ({
-  inputLabel,
+  inputLabel = "",
   inputLabelStyle,
   inputHelperText,
   inputHelperTextStyle,

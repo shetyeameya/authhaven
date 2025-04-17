@@ -4,7 +4,7 @@ import { InputTypes } from "../types/types";
 
 const CustomInputLabelOver: React.FC<InputTypes> = ({
   inputValue = "",
-  inputLabel,
+  inputLabel = "",
   inputLabelStyle,
   inputHelperText,
   inputHelperTextStyle,
