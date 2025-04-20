@@ -211,6 +211,11 @@ const ModernLogin: React.FC<LoginProps> = ({
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        maxWidth: "500px",
+        margin: "0 auto",
+        padding: "24px",
+        borderRadius: "16px",
+        boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
         ...mainLoginSectionStyle,
       }}
     >

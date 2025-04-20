@@ -10,6 +10,9 @@ const TwoFactorSetup: React.FC<TwoFactorSetupProps> = ({
   // Main container props
   mainContainerStyle,
   mainContainerClassName = "",
+  logo,
+  logoSectionClassName,
+  logoStyle,
 
   // Title props
   title = "2-Factor Authentication Setup",
@@ -90,10 +93,30 @@ const TwoFactorSetup: React.FC<TwoFactorSetupProps> = ({
         backgroundColor: "#FFFFFF",
         borderRadius: "12px",
         boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+        height: "fit-content",
         ...mainContainerStyle,
       }}
       className={mainContainerClassName}
     >
+      {/* Logo Section */}
+      {logo && (
+        <div
+          className={logoSectionClassName}
+          style={{
+            ...logoStyle,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            height: "100%",
+            padding: "12px 0",
+            margin: "12px 0",
+          }}
+        >
+          {logo}
+        </div>
+      )}
+
       {/* Title */}
       <CustomText
         as="h1"

@@ -870,6 +870,21 @@ export interface ForgotPasswordSelectionProps extends ButtonProps {
   mainContainerClassName?: string;
 
   /**
+   * Optional logo that can be displayed in the signup component
+   */
+  logo?: string | React.ReactNode;
+
+  /**
+   * Optional CSS class name for the logo section
+   */
+  logoSectionClassName?: string;
+
+  /**
+   * Optional custom styles for the logo
+   */
+  logoStyle?: React.CSSProperties;
+
+  /**
    * Title text for the forgot password page
    */
   title?: string;
@@ -1142,6 +1157,21 @@ export interface ForgotPasswordTraditionalProps
   mainContainerClassName?: string;
 
   /**
+   * Optional logo that can be displayed in the signup component
+   */
+  logo?: string | React.ReactNode;
+
+  /**
+   * Optional CSS class name for the logo section
+   */
+  logoSectionClassName?: string;
+
+  /**
+   * Optional custom styles for the logo
+   */
+  logoStyle?: React.CSSProperties;
+
+  /**
    * Title text for the forgot password page
    */
   title?: string;
@@ -1332,6 +1362,21 @@ export interface TwoFactorSetupProps extends ButtonProps {
    * Optional class name for the main container
    */
   mainContainerClassName?: string;
+
+  /**
+   * Optional logo that can be displayed in the signup component
+   */
+  logo?: string | React.ReactNode;
+
+  /**
+   * Optional CSS class name for the logo section
+   */
+  logoSectionClassName?: string;
+
+  /**
+   * Optional custom styles for the logo
+   */
+  logoStyle?: React.CSSProperties;
 
   /**
    * Title text for the 2FA setup screen
@@ -1562,6 +1607,21 @@ export interface TwoFactorVerifyProps extends ButtonProps, InputTypes {
    * Optional class name for the main container
    */
   mainContainerClassName?: string;
+
+  /**
+   * Optional logo that can be displayed in the signup component
+   */
+  logo?: string | React.ReactNode;
+
+  /**
+   * Optional CSS class name for the logo section
+   */
+  logoSectionClassName?: string;
+
+  /**
+   * Optional custom styles for the logo
+   */
+  logoStyle?: React.CSSProperties;
 
   /**
    * Label Position to determine if the label is over or inside the input field.
@@ -1824,4 +1884,199 @@ export interface DigitInputProps {
    * Callback when all digits are filled
    */
   onComplete?: (value: string) => void;
+}
+
+/**
+ * Props for the ResetPassword component
+ */
+export interface ResetPasswordProps extends ButtonProps, InputTypes {
+  /**
+   * Optional style for the main container
+   */
+  mainContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the main container
+   */
+  mainContainerClassName?: string;
+
+  /**
+   * Optional logo that can be displayed in the signup component
+   */
+  logo?: string | React.ReactNode;
+
+  /**
+   * Optional CSS class name for the logo section
+   */
+  logoSectionClassName?: string;
+
+  /**
+   * Optional custom styles for the logo
+   */
+  logoStyle?: React.CSSProperties;
+
+  /**
+   * Title text for the reset password page
+   */
+  title?: string;
+
+  /**
+   * Optional style for the title
+   */
+  titleStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the title
+   */
+  titleClassName?: string;
+
+  /**
+   * Description text for the reset password page
+   */
+  descriptionText?: string;
+
+  /**
+   * Optional style for the description text
+   */
+  descriptionStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the description text
+   */
+  descriptionClassName?: string;
+
+  /**
+   * Label for the password input field
+   */
+  passwordInputLabel?: string;
+
+  /**
+   * Current value of the password input
+   */
+  passwordInputValue?: string;
+
+  /**
+   * Function called when password input changes
+   */
+  handlePasswordChange: (value: string) => void;
+
+  /**
+   * Position of the label for the password input ('over' or 'internal')
+   */
+  labelPosition?: "over" | "internal";
+
+  /**
+   * Error message to display for the password input
+   */
+  passwordInputError?: string;
+
+  /**
+   * Helper text to display below the password input
+   */
+  passwordInputHelperText?: string;
+
+  /**
+   * Placeholder text for the password input
+   */
+  passwordInputPlaceholder?: string;
+
+  /**
+   * Label for the confirm password input field
+   */
+  confirmPasswordInputLabel?: string;
+
+  /**
+   * Current value of the confirm password input
+   */
+  confirmPasswordInputValue?: string;
+
+  /**
+   * Function called when confirm password input changes
+   */
+  handleConfirmPasswordChange: (value: string) => void;
+
+  /**
+   * Error message to display for the confirm password input
+   */
+  confirmPasswordInputError?: string;
+
+  /**
+   * Helper text to display below the confirm password input
+   */
+  confirmPasswordInputHelperText?: string;
+
+  /**
+   * Placeholder text for the confirm password input
+   */
+  confirmPasswordInputPlaceholder?: string;
+
+  /**
+   * Function called when the reset button is clicked
+   */
+  onResetPassword?: () => void;
+
+  /**
+   * Text for the reset button
+   */
+  resetButtonText?: string;
+
+  /**
+   * Optional style for the reset button
+   */
+  resetButtonStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the reset button
+   */
+  resetButtonClassName?: string;
+
+  /**
+   * Text for the back to login link
+   */
+  backToLoginText?: string;
+
+  /**
+   * Function called when back to login link is clicked
+   */
+  onBackToLogin?: () => void;
+
+  /**
+   * Optional style for the back to login link
+   */
+  backToLoginStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the back to login link
+   */
+  backToLoginClassName?: string;
+
+  /**
+   * Optional style for the form container
+   */
+  formContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the form container
+   */
+  formContainerClassName?: string;
+
+  /**
+   * Optional style for the password input container
+   */
+  passwordInputContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the password input container
+   */
+  passwordInputContainerClassName?: string;
+
+  /**
+   * Optional style for the confirm password input container
+   */
+  confirmPasswordInputContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the confirm password input container
+   */
+  confirmPasswordInputContainerClassName?: string;
 }

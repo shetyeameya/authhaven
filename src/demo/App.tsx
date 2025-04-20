@@ -9,6 +9,7 @@ import ForgotPasswordTraditional from "../ForgotPassword/ForgotPasswordTradition
 import TwoFactorSetup from "../Twofactor/TwofactorSetUp";
 import TwoFactorVerify from "../Twofactor/TwoFactorVerify";
 import CustomText from "../Reusable/CustomTextBox";
+import ResetPassword from "../ResetPassword/ResetPassword";
 
 function App() {
   // State for active demo section
@@ -18,6 +19,13 @@ function App() {
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   const [checkBoxValue, setCheckBoxValue] = useState(false);
+
+  // State for ResetPassword
+  const [resetNewPassword, setResetNewPassword] = useState("");
+  const [resetConfirmPassword, setResetConfirmPassword] = useState("");
+  const [resetPasswordError, setResetPasswordError] = useState("");
+  const [resetConfirmPasswordError, setResetConfirmPasswordError] =
+    useState("");
 
   // State for ForgotPasswordSelection
   const [selectedOption, setSelectedOption] = useState<
@@ -62,7 +70,7 @@ function App() {
       }}
     >
       <span style={{ fontSize: "24px", fontWeight: "bold", color: "#2563EB" }}>
-        Auth
+        {activeSection}
       </span>
       <span style={{ color: "#EF4444", fontSize: "24px", fontWeight: "bold" }}>
         •••
@@ -153,6 +161,62 @@ function App() {
       setConfirmPasswordError("Passwords do not match");
     } else {
       setConfirmPasswordError("");
+    }
+  };
+
+  //handlers for reset password
+  const handleResetNewPasswordChange = (value: string) => {
+    setResetNewPassword(value);
+    if (value.length < 8 && value) {
+      setResetPasswordError("Password must be at least 8 characters");
+    } else {
+      setResetPasswordError("");
+    }
+
+    // Check confirm password match
+    if (resetConfirmPassword && resetConfirmPassword !== value) {
+      setResetConfirmPasswordError("Passwords do not match");
+    } else if (resetConfirmPassword) {
+      setResetConfirmPasswordError("");
+    }
+  };
+
+  const handleResetConfirmPasswordChange = (value: string) => {
+    setResetConfirmPassword(value);
+    if (resetNewPassword && value !== resetNewPassword) {
+      setResetConfirmPasswordError("Passwords do not match");
+    } else {
+      setResetConfirmPasswordError("");
+    }
+  };
+
+  const handleResetPasswordSubmit = () => {
+    // Validate password
+    let hasError = false;
+
+    if (!resetNewPassword) {
+      setResetPasswordError("Password is required");
+      hasError = true;
+    } else if (resetNewPassword.length < 8) {
+      setResetPasswordError("Password must be at least 8 characters");
+      hasError = true;
+    }
+
+    if (!resetConfirmPassword) {
+      setResetConfirmPasswordError("Please confirm your password");
+      hasError = true;
+    } else if (resetNewPassword !== resetConfirmPassword) {
+      setResetConfirmPasswordError("Passwords do not match");
+      hasError = true;
+    }
+
+    if (!hasError) {
+      console.log("Password reset successful!");
+      // Clear form
+      setResetNewPassword("");
+      setResetConfirmPassword("");
+      // Navigate to login
+      navigateTo("login");
     }
   };
 
@@ -298,6 +362,21 @@ function App() {
           Forgot Password (Traditional)
         </button>
         <button
+          onClick={() => navigateTo("resetPassword")}
+          style={{
+            padding: "10px 20px",
+            backgroundColor:
+              activeSection === "resetPassword" ? "#3B82F6" : "#E5E7EB",
+            color: activeSection === "resetPassword" ? "white" : "#1F2937",
+            border: "none",
+            borderRadius: "8px",
+            cursor: "pointer",
+            fontWeight: 600,
+          }}
+        >
+          Reset Password
+        </button>
+        <button
           onClick={() => navigateTo("login")}
           style={{
             padding: "10px 20px",
@@ -331,6 +410,7 @@ function App() {
       <div style={{ display: "flex", justifyContent: "center" }}>
         {activeSection === "twoFactorSetup" && (
           <TwoFactorSetup
+            logo={<CustomLogo />}
             selectedMethod={authMethod}
             onMethodSelect={setAuthMethod}
             onContinue={handleContinueSetup}
@@ -375,6 +455,7 @@ function App() {
             </div>
 
             <TwoFactorVerify
+              logo={<CustomLogo />}
               verificationCodeValue={verificationCode}
               handleVerificationCodeChange={handleVerificationCodeChange}
               verificationCodeError={verificationError}
@@ -389,6 +470,7 @@ function App() {
 
         {activeSection === "forgotPasswordSelection" && (
           <ForgotPasswordSelection
+            logo={<CustomLogo />}
             selectedOption={selectedOption}
             onOptionSelect={setSelectedOption}
             onSendCode={() => console.log(`Sending code via ${selectedOption}`)}
@@ -399,6 +481,7 @@ function App() {
 
         {activeSection === "forgotPasswordTraditional" && (
           <ForgotPasswordTraditional
+            logo={<CustomLogo />}
             emailInputValue={forgotEmail}
             handleEmailChange={setForgotEmail}
             onResetPassword={() =>
@@ -433,6 +516,7 @@ function App() {
         {activeSection === "signup" && (
           <CustomSignUp
             gridView
+            logo={<CustomLogo />}
             title="Create Account"
             subTitle="Sign up to get started"
             fields={fields}
@@ -447,6 +531,21 @@ function App() {
             buttonType="button"
             onLogin={() => navigateTo("login")}
             onTermsAndConditions={() => console.log("Show terms")}
+          />
+        )}
+
+        {activeSection === "resetPassword" && (
+          <ResetPassword
+            logo={<CustomLogo />}
+            passwordInputValue={resetNewPassword}
+            confirmPasswordInputValue={resetConfirmPassword}
+            handlePasswordChange={handleResetNewPasswordChange}
+            handleConfirmPasswordChange={handleResetConfirmPasswordChange}
+            passwordInputError={resetPasswordError}
+            confirmPasswordInputError={resetConfirmPasswordError}
+            onResetPassword={handleResetPasswordSubmit}
+            onBackToLogin={() => navigateTo("login")}
+            labelPosition="over"
           />
         )}
       </div>
@@ -724,6 +823,47 @@ function App() {
   buttonOnClick={handleSignUp}
   onLogin={navigateToLogin}
   onTermsAndConditions={showTermsAndConditions}
+/>`}
+            </pre>
+          </div>
+        )}
+
+        {activeSection === "resetPassword" && (
+          <div>
+            <CustomText
+              as="h3"
+              text="ResetPassword Component"
+              textStyle={{
+                fontSize: "18px",
+                fontWeight: "bold",
+                marginBottom: "12px",
+              }}
+            />
+            <p>
+              This component provides a form for users to set a new password
+              after resetting it.
+            </p>
+            <pre
+              style={{
+                backgroundColor: "#1F2937",
+                color: "white",
+                padding: "16px",
+                borderRadius: "8px",
+                overflowX: "auto",
+              }}
+            >
+              {`<ResetPassword
+  passwordInputValue={resetNewPassword}
+  confirmPasswordInputValue={resetConfirmPassword}
+  handlePasswordChange={handleResetNewPasswordChange}
+  handleConfirmPasswordChange={handleResetConfirmPasswordChange}
+  passwordInputError={resetPasswordError}
+  confirmPasswordInputError={resetConfirmPasswordError}
+  onResetPassword={handleResetPasswordSubmit}
+  onBackToLogin={navigateToLogin}
+  title="Set new password"
+  descriptionText="Your new password must be different to previously used passwords."
+  labelPosition="over"  // or "internal"
 />`}
             </pre>
           </div>
