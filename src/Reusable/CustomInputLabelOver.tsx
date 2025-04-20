@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Eye, EyeOff, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { InputTypes } from "../types/types";
 
 const CustomInputLabelOver: React.FC<InputTypes> = ({

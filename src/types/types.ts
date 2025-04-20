@@ -854,3 +854,974 @@ export interface SignUpProps extends ButtonProps, InputTypes {
    */
   gridView?: boolean;
 }
+
+/**
+ * Props for the ForgotPasswordSelection component (Option selection UI)
+ */
+export interface ForgotPasswordSelectionProps extends ButtonProps {
+  /**
+   * Optional style for the main container
+   */
+  mainContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the main container
+   */
+  mainContainerClassName?: string;
+
+  /**
+   * Title text for the forgot password page
+   */
+  title?: string;
+
+  /**
+   * Optional style for the title
+   */
+  titleStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the title
+   */
+  titleClassName?: string;
+
+  /**
+   * Subtitle or description text
+   */
+  subtitleText?: string;
+
+  /**
+   * Optional style for the subtitle
+   */
+  subtitleStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the subtitle
+   */
+  subtitleClassName?: string;
+
+  /**
+   * Optional style for the options container
+   */
+  optionsContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the options container
+   */
+  optionsContainerClassName?: string;
+
+  /**
+   * Email option title text
+   */
+  emailOptionTitle?: string;
+
+  /**
+   * Email option description text
+   */
+  emailOptionDescription?: string;
+
+  /**
+   * Optional style for the email option container
+   */
+  emailOptionContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the email option container
+   */
+  emailOptionContainerClassName?: string;
+
+  /**
+   * Optional style for the email option title
+   */
+  emailOptionTitleStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the email option title
+   */
+  emailOptionTitleClassName?: string;
+
+  /**
+   * Optional style for the email option description
+   */
+  emailOptionDescriptionStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the email option description
+   */
+  emailOptionDescriptionClassName?: string;
+
+  /**
+   * Optional custom icon for the email option
+   */
+  emailIcon?: React.ReactNode;
+
+  /**
+   * Optional style for the email icon container
+   */
+  emailIconContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the email icon container
+   */
+  emailIconContainerClassName?: string;
+
+  /**
+   * Phone option title text
+   */
+  phoneOptionTitle?: string;
+
+  /**
+   * Phone option description text
+   */
+  phoneOptionDescription?: string;
+
+  /**
+   * Optional style for the phone option container
+   */
+  phoneOptionContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the phone option container
+   */
+  phoneOptionContainerClassName?: string;
+
+  /**
+   * Optional style for the phone option title
+   */
+  phoneOptionTitleStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the phone option title
+   */
+  phoneOptionTitleClassName?: string;
+
+  /**
+   * Optional style for the phone option description
+   */
+  phoneOptionDescriptionStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the phone option description
+   */
+  phoneOptionDescriptionClassName?: string;
+
+  /**
+   * Optional custom icon for the phone option
+   */
+  phoneIcon?: React.ReactNode;
+
+  /**
+   * Optional style for the phone icon container
+   */
+  phoneIconContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the phone icon container
+   */
+  phoneIconContainerClassName?: string;
+
+  /**
+   * Currently selected option ('email', 'phone', or null)
+   */
+  selectedOption?: "email" | "phone" | null;
+
+  /**
+   * Function called when an option is selected
+   */
+  onOptionSelect?: (option: "email" | "phone") => void;
+
+  /**
+   * Optional custom style for the selected option indicator
+   */
+  selectedOptionIndicatorStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the selected option indicator
+   */
+  selectedOptionIndicatorClassName?: string;
+
+  /**
+   * Text for the send code button
+   */
+  sendCodeButtonText?: string;
+
+  /**
+   * Function called when send code button is clicked
+   */
+  onSendCode?: () => void;
+
+  /**
+   * Optional style for the send code button
+   */
+  sendCodeButtonStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the send code button
+   */
+  sendCodeButtonClassName?: string;
+
+  /**
+   * Text for the resend link
+   */
+  resendLinkText?: string;
+
+  /**
+   * Function called when resend link is clicked
+   */
+  onResend?: () => void;
+
+  /**
+   * Optional style for the resend link container
+   */
+  resendContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the resend link container
+   */
+  resendContainerClassName?: string;
+
+  /**
+   * Text shown before the resend link
+   */
+  didntReceiveText?: string;
+
+  /**
+   * Optional style for the didn't receive text
+   */
+  didntReceiveTextStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the didn't receive text
+   */
+  didntReceiveTextClassName?: string;
+
+  /**
+   * Optional style for the resend link text
+   */
+  resendLinkStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the resend link text
+   */
+  resendLinkClassName?: string;
+
+  /**
+   * Text for the cancel button
+   */
+  cancelButtonText?: string;
+
+  /**
+   * Function called when cancel button is clicked
+   */
+  onCancel?: () => void;
+
+  /**
+   * Optional style for the cancel button
+   */
+  cancelButtonStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the cancel button
+   */
+  cancelButtonClassName?: string;
+}
+
+/**
+ * Props for the traditional ForgotPassword component with email input
+ */
+export interface ForgotPasswordTraditionalProps
+  extends ButtonProps,
+    InputTypes {
+  /**
+   * Optional style for the main container
+   */
+  mainContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the main container
+   */
+  mainContainerClassName?: string;
+
+  /**
+   * Title text for the forgot password page
+   */
+  title?: string;
+
+  /**
+   * Optional style for the title
+   */
+  titleStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the title
+   */
+  titleClassName?: string;
+
+  /**
+   * Description text for the forgot password page
+   */
+  descriptionText?: string;
+
+  /**
+   * Optional style for the description text
+   */
+  descriptionStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the description text
+   */
+  descriptionClassName?: string;
+
+  /**
+   * Label for the email input field
+   */
+  emailInputLabel?: string;
+
+  /**
+   * Current value of the email input
+   */
+  emailInputValue?: string;
+
+  /**
+   * Function called when email input changes
+   */
+  handleEmailChange: (value: string) => void;
+
+  /**
+   * Position of the label for the email input ('over' or 'internal')
+   */
+  labelPosition?: "over" | "internal";
+
+  /**
+   * Error message to display for the email input
+   */
+  emailInputError?: string;
+
+  /**
+   * Helper text to display below the email input
+   */
+  emailInputHelperText?: string;
+
+  /**
+   * Placeholder text for the email input
+   */
+  emailInputPlaceholder?: string;
+
+  /**
+   * Function called when the reset button is clicked
+   */
+  onResetPassword?: () => void;
+
+  /**
+   * Text for the reset button
+   */
+  resetButtonText?: string;
+
+  /**
+   * Optional style for the reset button
+   */
+  resetButtonStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the reset button
+   */
+  resetButtonClassName?: string;
+
+  /**
+   * Text for the back to login link
+   */
+  backToLoginText?: string;
+
+  /**
+   * Function called when back to login link is clicked
+   */
+  onBackToLogin?: () => void;
+
+  /**
+   * Optional style for the back to login link
+   */
+  backToLoginStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the back to login link
+   */
+  backToLoginClassName?: string;
+
+  /**
+   * Optional style for the form container
+   */
+  formContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the form container
+   */
+  formContainerClassName?: string;
+
+  /**
+   * Text for the cancel button
+   */
+  cancelButtonText?: string;
+
+  /**
+   * Function called when cancel button is clicked
+   */
+  onCancel?: () => void;
+
+  /**
+   * Optional style for the cancel button
+   */
+  cancelButtonStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the cancel button
+   */
+  cancelButtonClassName?: string;
+}
+
+export interface CustomTextProps {
+  /**
+   * The text content to display
+   */
+  text?: string;
+
+  /**
+   * Optional custom styles for the text
+   */
+  textStyle?: React.CSSProperties;
+
+  /**
+   * Optional CSS class name for the text
+   */
+  textClassName?: string;
+
+  /**
+   * HTML element to use for the text ('p', 'span', 'h1', 'h2', 'h3', etc.)
+   */
+  as?: "p" | "span" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "div";
+
+  /**
+   * Optional custom styles for the container
+   */
+  containerStyle?: React.CSSProperties;
+
+  /**
+   * Optional CSS class name for the container
+   */
+  containerClassName?: string;
+
+  /**
+   * Optional child elements
+   */
+  children?: React.ReactNode;
+
+  /**
+   * Optional onClick handler
+   */
+  onClick?: () => void;
+}
+
+/**
+ * Props for the TwoFactorSetup component (first screen)
+ */
+export interface TwoFactorSetupProps extends ButtonProps {
+  /**
+   * Optional style for the main container
+   */
+  mainContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the main container
+   */
+  mainContainerClassName?: string;
+
+  /**
+   * Title text for the 2FA setup screen
+   */
+  title?: string;
+
+  /**
+   * Optional style for the title
+   */
+  titleStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the title
+   */
+  titleClassName?: string;
+
+  /**
+   * Subtitle or description text
+   */
+  subtitleText?: string;
+
+  /**
+   * Optional style for the subtitle
+   */
+  subtitleStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the subtitle
+   */
+  subtitleClassName?: string;
+
+  /**
+   * Options container style
+   */
+  optionsContainerStyle?: React.CSSProperties;
+
+  /**
+   * Options container class name
+   */
+  optionsContainerClassName?: string;
+
+  /**
+   * Selected authentication method ('app' or 'sms')
+   */
+  selectedMethod?: "app" | "sms" | null;
+
+  /**
+   * Function called when an authentication method is selected
+   */
+  onMethodSelect?: (method: "app" | "sms") => void;
+
+  /**
+   * App option title text
+   */
+  appOptionTitle?: string;
+
+  /**
+   * App option description text
+   */
+  appOptionDescription?: string;
+
+  /**
+   * Optional style for the app option container
+   */
+  appOptionContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the app option container
+   */
+  appOptionContainerClassName?: string;
+
+  /**
+   * Optional style for the app option title
+   */
+  appOptionTitleStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the app option title
+   */
+  appOptionTitleClassName?: string;
+
+  /**
+   * Optional style for the app option description
+   */
+  appOptionDescriptionStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the app option description
+   */
+  appOptionDescriptionClassName?: string;
+
+  /**
+   * SMS option title text
+   */
+  smsOptionTitle?: string;
+
+  /**
+   * SMS option description text
+   */
+  smsOptionDescription?: string;
+
+  /**
+   * Optional style for the SMS option container
+   */
+  smsOptionContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the SMS option container
+   */
+  smsOptionContainerClassName?: string;
+
+  /**
+   * Optional style for the SMS option title
+   */
+  smsOptionTitleStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the SMS option title
+   */
+  smsOptionTitleClassName?: string;
+
+  /**
+   * Optional style for the SMS option description
+   */
+  smsOptionDescriptionStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the SMS option description
+   */
+  smsOptionDescriptionClassName?: string;
+
+  /**
+   * Text for the recommended badge
+   */
+  recommendedText?: string;
+
+  /**
+   * Style for the recommended badge
+   */
+  recommendedBadgeStyle?: React.CSSProperties;
+
+  /**
+   * Class name for the recommended badge
+   */
+  recommendedBadgeClassName?: string;
+
+  /**
+   * Radio button container style
+   */
+  radioContainerStyle?: React.CSSProperties;
+
+  /**
+   * Radio button container class name
+   */
+  radioContainerClassName?: string;
+
+  /**
+   * Radio button style
+   */
+  radioStyle?: React.CSSProperties;
+
+  /**
+   * Radio button class name
+   */
+  radioClassName?: string;
+
+  /**
+   * Continue button text
+   */
+  continueButtonText?: string;
+
+  /**
+   * Function called when continue button is clicked
+   */
+  onContinue?: () => void;
+
+  /**
+   * Style for the continue button
+   */
+  continueButtonStyle?: React.CSSProperties;
+
+  /**
+   * Class name for the continue button
+   */
+  continueButtonClassName?: string;
+
+  /**
+   * Cancel button text
+   */
+  cancelButtonText?: string;
+
+  /**
+   * Function called when cancel button is clicked
+   */
+  onCancel?: () => void;
+
+  /**
+   * Style for the cancel button
+   */
+  cancelButtonStyle?: React.CSSProperties;
+
+  /**
+   * Class name for the cancel button
+   */
+  cancelButtonClassName?: string;
+
+  /**
+   * Buttons container style
+   */
+  buttonsContainerStyle?: React.CSSProperties;
+
+  /**
+   * Buttons container class name
+   */
+  buttonsContainerClassName?: string;
+}
+
+/**
+ * Props for the TwoFactorVerify component (second screen)
+ */
+export interface TwoFactorVerifyProps extends ButtonProps, InputTypes {
+  /**
+   * Optional style for the main container
+   */
+  mainContainerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the main container
+   */
+  mainContainerClassName?: string;
+
+  /**
+   * Label Position to determine if the label is over or inside the input field.
+   */
+  labelPosition?: "over" | "internal";
+
+  /**
+   * Title text for the 2FA verification screen
+   */
+  title?: string;
+
+  /**
+   * Optional style for the title
+   */
+  titleStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the title
+   */
+  titleClassName?: string;
+
+  /**
+   * Phone number or email where code was sent (will be partially masked)
+   */
+  maskedDestination?: string;
+
+  /**
+   * Optional style for the masked destination text
+   */
+  maskedDestinationStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the masked destination text
+   */
+  maskedDestinationClassName?: string;
+
+  /**
+   * Text for the notification about code being sent
+   */
+  notificationText?: string;
+
+  /**
+   * Optional style for the notification text
+   */
+  notificationTextStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the notification text
+   */
+  notificationTextClassName?: string;
+
+  /**
+   * Text for the verification instructions
+   */
+  instructionsText?: string;
+
+  /**
+   * Optional style for the instructions text
+   */
+  instructionsTextStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the instructions text
+   */
+  instructionsTextClassName?: string;
+
+  /**
+   * Label for the verification code input
+   */
+  verificationCodeLabel?: string;
+
+  /**
+   * Optional style for the verification code label
+   */
+  verificationCodeLabelStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the verification code label
+   */
+  verificationCodeLabelClassName?: string;
+
+  /**
+   * Current value of the verification code
+   */
+  verificationCodeValue?: string;
+
+  /**
+   * Function called when verification code changes
+   */
+  handleVerificationCodeChange: (value: string) => void;
+
+  /**
+   * Error message to display for the verification code
+   */
+  verificationCodeError?: string;
+
+  /**
+   * Whether to use the digit input (true) or the standard input (false)
+   */
+  useDigitInput?: boolean;
+
+  /**
+   * Number of digits in the verification code (for digit input)
+   */
+  digitCount?: number;
+
+  /**
+   * Style for each digit input box
+   */
+  digitInputStyle?: React.CSSProperties;
+
+  /**
+   * Class name for each digit input box
+   */
+  digitInputClassName?: string;
+
+  /**
+   * Style for the digit input container
+   */
+  digitInputContainerStyle?: React.CSSProperties;
+
+  /**
+   * Class name for the digit input container
+   */
+  digitInputContainerClassName?: string;
+
+  /**
+   * Additional text shown below the verification code
+   */
+  additionalInfoText?: string;
+
+  /**
+   * Optional style for the additional info text
+   */
+  additionalInfoTextStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the additional info text
+   */
+  additionalInfoTextClassName?: string;
+
+  /**
+   * Continue button text
+   */
+  continueButtonText?: string;
+
+  /**
+   * Function called when continue button is clicked
+   */
+  onContinue?: () => void;
+
+  /**
+   * Style for the continue button
+   */
+  continueButtonStyle?: React.CSSProperties;
+
+  /**
+   * Class name for the continue button
+   */
+  continueButtonClassName?: string;
+
+  /**
+   * Back button text
+   */
+  backButtonText?: string;
+
+  /**
+   * Function called when back button is clicked
+   */
+  onBack?: () => void;
+
+  /**
+   * Style for the back button
+   */
+  backButtonStyle?: React.CSSProperties;
+
+  /**
+   * Class name for the back button
+   */
+  backButtonClassName?: string;
+
+  /**
+   * Buttons container style
+   */
+  buttonsContainerStyle?: React.CSSProperties;
+
+  /**
+   * Buttons container class name
+   */
+  buttonsContainerClassName?: string;
+}
+
+export interface DigitInputProps {
+  /**
+   * Number of digits to display
+   */
+  digitCount: number;
+
+  /**
+   * Current value of the verification code
+   */
+  value: string;
+
+  /**
+   * Function called when verification code changes
+   */
+  onChange: (value: string) => void;
+
+  /**
+   * Optional style for each digit input box
+   */
+  digitStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for each digit input box
+   */
+  digitClassName?: string;
+
+  /**
+   * Optional style for the digit input container
+   */
+  containerStyle?: React.CSSProperties;
+
+  /**
+   * Optional class name for the digit input container
+   */
+  containerClassName?: string;
+
+  /**
+   * Optional placeholder for each digit input (default is empty)
+   */
+  digitPlaceholder?: string;
+
+  /**
+   * Error state for the input
+   */
+  error?: boolean;
+
+  /**
+   * Error message to display
+   */
+  errorMessage?: string;
+
+  /**
+   * Style for the error message
+   */
+  errorStyle?: React.CSSProperties;
+
+  /**
+   * Class name for the error message
+   */
+  errorClassName?: string;
+
+  /**
+   * Whether the input is disabled
+   */
+  disabled?: boolean;
+
+  /**
+   * Callback when all digits are filled
+   */
+  onComplete?: (value: string) => void;
+}

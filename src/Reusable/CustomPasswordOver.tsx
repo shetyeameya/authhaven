@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Eye, EyeOff, Lock } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import { InputTypes } from "../types/types";
 
 const CustomPasswordInputLabelOver: React.FC<InputTypes> = ({

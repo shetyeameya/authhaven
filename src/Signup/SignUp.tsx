@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import CustomInputLabelInternal from "../Reusable/CustomInputLabelInternal";
 import CustomInputLabelOver from "../Reusable/CustomInputLabelOver";
 import CustomPasswordInput from "../Reusable/CustomPasswordInternal";
 import CustomPasswordInputOver from "../Reusable/CustomPasswordOver";
 import CustomButton from "../Reusable/CustomButton";
-import { Mail, Lock, User, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { SignUpProps } from "../types/types";
 
 /**
@@ -227,9 +227,10 @@ const CustomSignUp: React.FC<SignUpProps> = ({
             height: "fit-content",
             display: "grid",
             justifyContent: "center",
-            alignItems: "center",
-            gridTemplateColumns: "45% 45%" /* Create 2 equal columns */,
-            gap: "25px",
+            alignItems: "baseline",
+            gridTemplateColumns: "48% 48%" /* Create 2 equal columns */,
+            gap: "4%",
+            marginBottom: "25px",
           }}
         >
           {fields.map((field, index) => renderField(field, index))}
