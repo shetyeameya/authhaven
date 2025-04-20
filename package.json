@@ -1,6 +1,6 @@
 {
   "name": "authhaven",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "description": "Custom authentication UI components",
   "main": "dist/index.js",
