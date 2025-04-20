@@ -19,10 +19,9 @@
     "react-dom": "^18.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "cross-env REACT_APP_DEMO=true craco start",
+    "build": "craco build",
+    "test": "craco test",
     "build:lib": "rollup -c",
     "prepublishOnly": "npm run build:lib"
   },
@@ -45,6 +44,10 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
@@ -54,17 +57,15 @@
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "@types/testing-library__jest-dom": "^5.14.9",
+    "cross-env": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4",
-    "@rollup/plugin-commonjs": "^22.0.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-typescript": "^8.3.3",
     "rollup": "^2.77.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
   }
 }

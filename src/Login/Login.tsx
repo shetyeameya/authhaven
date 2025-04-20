@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import CustomInputLabelInternal from "../Reusable/CustomInputLabelInternal";
 import CustomInputLabelOver from "../Reusable/CustomInputLabelOver";
 import CustomPasswordInput from "../Reusable/CustomPasswordInternal";
 import CustomPasswordInputOver from "../Reusable/CustomPasswordOver";
 import CustomButton from "../Reusable/CustomButton";
-import { Mail, Lock, ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { LoginProps } from "../types/types";
 
 /**
