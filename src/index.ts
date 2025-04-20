@@ -13,3 +13,5 @@ export { default as Login } from "./Login/Login";
 export { default as SignUp } from "./Signup/SignUp";
 export { default as TwoFactorSetup } from "./Twofactor/TwofactorSetUp";
 export { default as TwoFactorVerify } from "./Twofactor/TwoFactorVerify";
+export { default as DigitInput } from "./Reusable/CustomDigitInput";
+export { default as ResetPassword } from "./ResetPassword/ResetPassword";

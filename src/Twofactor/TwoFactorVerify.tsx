@@ -13,6 +13,9 @@ const TwoFactorVerify: React.FC<TwoFactorVerifyProps> = ({
   // Main container props
   mainContainerStyle,
   mainContainerClassName = "",
+  logo,
+  logoSectionClassName,
+  logoStyle,
 
   // Title props
   title = "2-Factor Authentication Setup",
@@ -163,14 +166,34 @@ const TwoFactorVerify: React.FC<TwoFactorVerifyProps> = ({
       style={{
         maxWidth: "500px",
         margin: "0 auto",
-        padding: "30px",
+        padding: "24px",
         backgroundColor: "#FFFFFF",
-        borderRadius: "12px",
-        boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+        borderRadius: "16px",
+        boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
+        height: "fit-content",
         ...mainContainerStyle,
       }}
       className={mainContainerClassName}
     >
+      {/* Logo Section */}
+      {logo && (
+        <div
+          className={logoSectionClassName}
+          style={{
+            ...logoStyle,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            height: "100%",
+            padding: "12px 0",
+            margin: "12px 0",
+          }}
+        >
+          {logo}
+        </div>
+      )}
+
       {/* Title */}
       <CustomText
         as="h1"

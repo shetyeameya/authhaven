@@ -1,6 +1,6 @@
 {
   "name": "authhaven",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "description": "Customizable React and TypeScript authentication UI components with support for login, signup, 2FA, and more.",
   "keywords": [

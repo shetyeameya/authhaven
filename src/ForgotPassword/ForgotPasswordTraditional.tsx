@@ -12,6 +12,9 @@ const ForgotPasswordTraditional: React.FC<ForgotPasswordTraditionalProps> = ({
   // Main container props
   mainContainerStyle,
   mainContainerClassName = "",
+  logo,
+  logoSectionClassName,
+  logoStyle,
 
   // Title props
   title = "Forgot your password?",
@@ -114,10 +117,29 @@ const ForgotPasswordTraditional: React.FC<ForgotPasswordTraditionalProps> = ({
         backgroundColor: "#FFFFFF",
         borderRadius: "16px",
         boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
+        height: "fit-content",
         ...mainContainerStyle,
       }}
       className={mainContainerClassName}
     >
+      {/* Logo Section */}
+      {logo && (
+        <div
+          className={logoSectionClassName}
+          style={{
+            ...logoStyle,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            height: "100%",
+            padding: "12px 0",
+            margin: "12px 0",
+          }}
+        >
+          {logo}
+        </div>
+      )}
       {/* Title */}
       <CustomTextBox
         as="h1"
